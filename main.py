@@ -36,6 +36,13 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/clear_history", methods=["POST"])
+def clear_history():
+    global chat_history
+    chat_history = []
+    return jsonify(status="success")
+
+
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()

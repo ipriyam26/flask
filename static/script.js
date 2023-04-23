@@ -77,3 +77,31 @@ document.addEventListener("DOMContentLoaded", () => {
         chatContent.scrollTop = chatContent.scrollHeight;
     }
 });
+const clearChatButton = document.querySelector(".chat-clear");
+
+clearChatButton.addEventListener("click", async () => {
+    clearChatHistory();
+    try {
+        const response = await fetch("/clear_history", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const data = await response.json();
+        if (data.status === "success") {
+            console.log("Chat history cleared successfully");
+        } else {
+            console.error("Failed to clear chat history");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+
+function clearChatHistory() {
+    const messageWrappers = document.querySelectorAll(".message-wrapper");
+    messageWrappers.forEach((messageWrapper) => {
+        messageWrapper.remove();
+    });
+}
