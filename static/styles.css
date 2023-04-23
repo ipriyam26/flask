@@ -1,0 +1,152 @@
+/* For full-screen height and width */
+html, body, .container-fluid, .row, .col-12, .col-md-8, .col-lg-6, .card {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  margin: 0;
+}
+
+/* Dark theme */
+body {
+background-color: #333 !important;
+}
+
+.card {
+background-color: #222;
+color: #fff;
+}
+
+/* Smaller header and improved styling */
+.card-header {
+  background-color: #3498db;
+  border-bottom: none;
+  padding: 10px 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.chat-input, .chat-submit {
+background-color: #1d1d1d;
+border-color: #1d1d1d;
+color: #fff;
+}
+
+.chat-input:focus {
+border-color: #1d1d1d;
+box-shadow: none;
+}
+
+.card-footer {
+background-color: #1d1d1d;
+border-top: none;
+}
+
+/* Different background colors for user and bot messages */
+.user .message {
+  background-color: #3498db !important;
+  color: #fff;
+}
+
+.bot .message {
+  background-color: #2a2a2a !important; /* Different shade of the current background */
+  color: #fff;
+}
+
+/* Loader */
+.loader {
+border-color: #fff;
+border-top-color: transparent;
+}
+/* Full-width message wrapper */
+.message-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-wrapper.user {
+  justify-content: flex-end;
+}
+
+/* Different background colors for user and bot messages */
+.message-wrapper.user .message {
+  background-color: #3498db !important;
+  color: #fff;
+}
+
+.message-wrapper.bot .message {
+  background-color: #2a2a2a !important;
+  color: #fff;
+}
+
+/* Add padding and margin for the message */
+.message {
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 8px;
+}
+
+/* Loading animation styles */
+/* Loading animation styles */
+.loading-dots {
+  display: inline-block;
+  position: relative;
+  width: 1.5em;
+  height: 1em;
+}
+
+.loading-dots div {
+  position: absolute;
+  width: 0.25em;
+  height: 0.25em;
+  background:  #3498db;
+  animation: loading-dots 1.4s infinite ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loading-dots div:nth-child(1) {
+  left: 0;
+  animation-delay: -0.56s;
+}
+
+.loading-dots div:nth-child(2) {
+  left: 0.33em;
+  animation-delay: -0.40s;
+}
+
+.loading-dots div:nth-child(3) {
+  left: 0.66em;
+  animation-delay: -0.24s;
+}
+
+.loading-dots div:nth-child(4) {
+  left: 1em;
+  animation-delay: -0.08s;
+}
+
+.loading-dots div:nth-child(5) {
+  left: 1.33em;
+  animation-delay: 0;
+}
+
+@keyframes loading-dots {
+  0%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
