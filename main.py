@@ -45,14 +45,14 @@ def ask():
 
 
 def find_answer(question):
-    try:
+    # try:
         result = qa({"question": question, "chat_history": chat_history})
         chat_history.append((question, result["answer"]))
-    except:
-        result = {
-            "answer": "I am sorry, I am not able to figure answere with given context."
-        }
-    return result["answer"]
+    # except:
+    #     result = {
+    #         "answer": "I am sorry, I am not able to figure answere with given context."
+    #     }
+        return result["answer"]
 
 
 if __name__ == "__main__":
